@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   const footerLinks = {
     company: {
@@ -25,14 +27,6 @@ export default function Footer() {
     },
   };
 
-  const socialLinks = [
-    { name: "Twitter", icon: "𝕏" },
-    { name: "Facebook", icon: "f" },
-    { name: "Instagram", icon: "📷" },
-    { name: "LinkedIn", icon: "in" },
-    { name: "Telegram", icon: "✈" },
-  ];
-
   return (
     <footer className="relative bg-[#0d0d15] border-t border-gray-800/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -41,15 +35,17 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#ff1654] to-[#ff4d8b] rounded-lg flex items-center justify-center transform rotate-12">
-                  <span className="text-white font-black text-2xl transform -rotate-12">
-                    T
-                  </span>
-                </div>
+                <Image
+                  className="rounded-full"
+                  src="/Images/image.png"
+                  alt="Logo"
+                  width={80}
+                  height={80}
+                />
               </div>
               <div>
                 <span className="text-2xl font-black text-white tracking-tight">
-                  Trading <span className="text-[#ff1654]">Portfolio</span>
+                  Shadow <span className="text-[#ff1654]">FX</span>
                 </span>
               </div>
             </div>
@@ -57,17 +53,6 @@ export default function Footer() {
               Your trusted partner in the world of trading. Join thousands of
               traders who achieve their financial goals with our platform.
             </p>
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <button
-                  key={index}
-                  className="w-10 h-10 bg-gray-800/50 hover:bg-[#ff1654] rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
-                  aria-label={social.name}
-                >
-                  <span className="text-white font-bold">{social.icon}</span>
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Links Sections */}
@@ -90,36 +75,11 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Newsletter */}
-        <div className="bg-gradient-to-br from-[#1a1a2e]/60 to-[#16161e]/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-800/50 mb-12">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Stay Updated 📬
-              </h3>
-              <p className="text-gray-400">
-                Subscribe to our newsletter for trading tips and market
-                insights.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-[#0d0d15] border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#ff1654] transition-colors"
-              />
-              <button className="px-6 py-3 bg-[#ff1654] hover:bg-[#ff1654]/90 text-white rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ff1654]/30">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2025 Trading Portfolio. All rights reserved.
+              © 2025 Shadow FX. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <a
